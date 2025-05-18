@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>model-sentiment-analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/model.css') }}">
+    <!-- <link rel="stylesheet" href="/Projects/Sentiment Analysis/static/css/model.css"> -->
+</head>
+<body class="body">
+    <h1>Sentiment Analyzer</h1>
+    <div class="input">
+        <form action="/get_input" method="post">
+            <textarea name="review" cols="50" rows="5" placeholder="Enter your review here" required></textarea><br><br>
+            <input class="submit" type="submit" value="submit">
+            <input class="clear" type="reset" value="clear"><br>
+        </form>
+
+    </div>
+    
+    <div class="message">
+        <h2> Result:</h2>
+
+        {% if message == 1 %}
+        <h3 id="positive">Positive</h3>
+        
+        {% elif message == 0 %}
+            <h3 id="negative">Negative</h3>
+            
+            <!-- <h3 id="negative"><script>
+                alert("The Review is Negative")
+            </script></h3> -->
+        
+        {% else %}
+            <h3 id="neutral"> {{ message }} </h3>
+            
+        {% endif %}
+    </div>
+
+</body>
+</html>

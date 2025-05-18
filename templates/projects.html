@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projects</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+    <!-- <link rel="stylesheet" href="/Projects/Sentiment Analysis/static/css/projects.css"> -->
+</head>
+<body>
+    <h1>Sadain Ahmad</h1>
+    <h2>Projects</h2>
+    <div class="main">
+
+        <div class="model">
+            <a href="model.html">
+                <img src="{{ url_for('static', filename='images/sentimnt-analysis.jpeg') }}" alt="sentiment-analysis-Image">
+                <h3 style="text-align: center;">Sentiment Analyzer</h3>
+            </a>
+        </div>
+        
+        <!-- <div class="model">
+            <a href="#">
+                <img src="{{ url_for('static', filename='images/spam-classifier.png') }}" alt="sms-spam-classifier-Image">
+                <h3 style="text-align: center;">SMS Spam Classifier</h3>
+            </a> 
+        </div> -->
+
+        <div class="model">
+            <a href="#">
+                <img src="{{ url_for('static', filename='images/recommender-system.jpeg') }}" alt="sms-spam-classifier-Image">
+                <h3 style="text-align: center;">Recommender System</h3>
+            </a> 
+        </div>
+
+
+        <div class="model">
+            <a href="#">
+                <img src="{{ url_for('static', filename='images/mask-detection.jpeg') }}" alt="sms-spam-classifier-Image">
+                <h3 style="text-align: center;">Face Mask Detecter</h3>
+            </a> 
+        </div>
+        
+
+    </div>
+    
+</body>
+</html>
