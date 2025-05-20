@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import FunctionTransformer
 import pickle
-from dummy import (clean, expanding_abrevations, remove_stopwords, stemming, tokenize)
+from model import (clean, expanding_abrevations, remove_stopwords, stemming, tokenize)
 
 
 with open('D:\\My Journey\\Machine Learning\\Projects\\Sentiment Analysis\\model.pkl', 'rb') as f:
@@ -30,11 +30,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def projects():
-    return render_template('model.html')
+    return render_template('projects.html')
 
-# @app.route('/model.html')
-# def model_page():
-#     return render_template('model.html')
+@app.route('/model.html')
+def model_page():
+    return render_template('sentiment_analyzer.html')
+
 
 
 @app.route('/get_input', methods=['post'])
@@ -51,11 +52,11 @@ def get_input():
     # Render the result template with the prediction
 
     if y_pred == 1:
-        return render_template('model.html', message = 1)
+        return render_template('sentiment_analyzer.html', message = 1)
     elif y_pred == 0:
-        return render_template('model.html', message = 0)
+        return render_template('sentiment_analyzer.html', message = 0)
     else:
-        return render_template('model.html', message="Neutral")
+        return render_template('sentiment_analyzer.html', message="Neutral")
 
 
 
